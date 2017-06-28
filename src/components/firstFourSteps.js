@@ -7,7 +7,7 @@ class FirstFourSteps extends Component {
         <div className='stepOne'>
           <h1>Type of Lye</h1>
             <label>NaOH
-              <input type='radio' name='Lye' value='NaOH' checked/>
+              <input type='radio' name='Lye' value='NaOH'/>
             </label><br/>
             <label>KOH
               <input type='radio' name='Lye' value='KOH'/>

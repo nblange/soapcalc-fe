@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import FirstFourSteps from './components/firstFourSteps';
+import StepFive from './components/stepFive';
 import {Router, Route, Switch} from 'react-router';
 import './App.css';
 
@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div>
         <FirstFourSteps/>
+        <StepFive/>
       </div>
     );
   }
