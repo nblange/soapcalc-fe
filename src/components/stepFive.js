@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import DisplayIngredient from '../redux/reducer'
+import {displayIngredientAction} from '../redux/action'
 
 class StepFive extends Component{
   constructor(props) {
@@ -19,6 +21,13 @@ class StepFive extends Component{
             self.setState({ingredients: ingredients})
       })
     }
+  // renderIngredientsList(){
+  //   for(var i = 0; i < this.state.ingredients.length; i++){
+  //     return(
+  //       <IngredientsTile{...this.props} ingredient={ingredient} key= {i}/>
+  //     )
+  //   }
+  // }
 
 render() {
   console.log(this.state.ingredients, 'in render')
@@ -26,10 +35,12 @@ render() {
     return(<div><span>loading</span></div>)
   } else {
       return(
+      <div>
+
         <div className='stepFiveBox'>
           <h1>{this.state.ingredients[0].name}</h1>
           <ul>
-            <li>Hardness={this.state.ingredients[0].hardness}</li>
+            <li id ='hardness'>Hardness={this.state.ingredients[0].hardness}</li>
             <li>Cleansing={this.state.ingredients[0].cleansing}</li>
             <li>Condidtion={this.state.ingredients[0].condition1}</li>
             <li>Bubbly={this.state.ingredients[0].bubbly}</li>
@@ -47,9 +58,10 @@ render() {
             <li>NaOH SAP={this.state.ingredients[0].sap}</li>
           </ul>
         </div>
+      </div>
       )
     }
   }
 }
 
-export default StepFive
+export default DisplayIngredient(StepFive)
