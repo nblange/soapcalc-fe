@@ -22,6 +22,6 @@ function reducer(state, action){
         linolenic: action.linolenic})
 
     }
-}
+};
 
 module.exports = reducer
