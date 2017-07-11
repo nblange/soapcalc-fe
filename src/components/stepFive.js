@@ -9,7 +9,9 @@ class StepFive extends Component{
 
       }
   }
-    componentDidMount() {
+
+
+  componentDidMount() {
       var self = this;
       $.ajax({
         method: 'GET',
@@ -19,6 +21,18 @@ class StepFive extends Component{
             self.setState({ingredients: ingredients})
       })
     }
+    listAll(){
+      var rows = [];
+      for(var i = 0; i<this.state.ingredients.length; i++){
+        rows.push(this.state.ingredients[i].name)
+        console.log(this.state.ingredients[i].name,'lookatme')
+        console.log(rows)
+      }
+      return (
+        <div>
+        <h1>{rows}</h1>
+      </div>)
+    }
 
 render() {
   console.log(this.state.ingredients, 'in render')
@@ -27,7 +41,7 @@ render() {
   } else {
       return(
         <div className='stepFiveBox'>
-          <h1>{this.state.ingredients[0].name}</h1>
+          <h1> {this.listAll()}</h1>
           <ul>
             <li>Hardness={this.state.ingredients[0].hardness}</li>
             <li>Cleansing={this.state.ingredients[0].cleansing}</li>
@@ -49,7 +63,7 @@ render() {
         </div>
       )
     }
-  }
+  console.log(this.listAll(),)}
 }
 
 export default StepFive
