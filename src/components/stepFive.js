@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import '../index.css';
 
 class StepFive extends Component{
   constructor(props) {
@@ -9,7 +10,6 @@ class StepFive extends Component{
 
       }
   }
-
 
   componentDidMount() {
       var self = this;
@@ -21,16 +21,19 @@ class StepFive extends Component{
             self.setState({ingredients: ingredients})
       })
     }
+
+    handleChange(event){
+      this.setState({hardness: event.target.value})
+    }
+    
     listAll(){
-      var rows = [];
-      for(var i = 0; i<this.state.ingredients.length; i++){
-        rows.push(this.state.ingredients[i].name)
-        console.log(this.state.ingredients[i].name,'lookatme')
-        console.log(rows)
-      }
       return (
         <div>
-        <h1>{rows}</h1>
+          <div className="vertical-menu">
+          {this.state.ingredients.map(function(ingredients, i){
+            return <a key={i} href="#">{ingredients.name}</a>
+          })}
+        </div>
       </div>)
     }
 
@@ -41,7 +44,7 @@ render() {
   } else {
       return(
         <div className='stepFiveBox'>
-          <h1> {this.listAll()}</h1>
+          {this.listAll()}
           <ul>
             <li>Hardness={this.state.ingredients[0].hardness}</li>
             <li>Cleansing={this.state.ingredients[0].cleansing}</li>
