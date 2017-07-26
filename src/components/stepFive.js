@@ -28,9 +28,12 @@ class StepFive extends Component{
         console.log(this.state.ingredients[i].name,'lookatme')
         console.log(rows)
       }
+      // SET ONCLICK METHOD TO TAKE THE VALUES ID SET THAT TO A VARIABLE AND THAT WILL TAKE THE PLACE OF i IN {this.state.ingredients[i].hardness}
       return (
         <div>
-        <h1>{rows}</h1>
+        <select>
+          <option>{rows}</option>
+        </select>
       </div>)
     }
 
@@ -57,7 +60,7 @@ render() {
             <li>Ricinoleic={this.state.ingredients[0].rincinoleic}</li>
             <li>Oleic={this.state.ingredients[0].oleic}</li>
             <li>Linoleic={this.state.ingredients[0].linoleic}</li>
-            <li>Linolenic={this.state.ingredients[0].linoleic}</li>
+            <li>Linolenic={this.state.ingredients[0].linolenic}</li>
             <li>NaOH SAP={this.state.ingredients[0].sap}</li>
           </ul>
         </div>
