@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../index.css';
 
 class FirstFourSteps extends Component {
   render(){
     return (
-      <div className='firstFourStepsBox'>
+      <div className='firstFourStepsBox'  >
         <div className='stepOne'>
           <h1>Type of Lye</h1>
             <label>NaOH
@@ -19,13 +20,13 @@ class FirstFourSteps extends Component {
         <div className='stepTwo'>
           <h1> Weight of Oils</h1>
           <label>Pounds
-            <input type='radio' name='Pounds' value='Pounds' checked/>
+            <input type='radio' name='Weight' value='Pounds' checked/>
           </label><br/>
           <label>Ounces
-            <input type='radio' name='Ounces' value='KOH'/>
+            <input type='radio' name='Weight' value='KOH'/>
           </label><br/>
           <label>Grams
-            <input type='radio' name='Grams' value='KOH'/>
+            <input type='radio' name='Weight' value='KOH'/>
           </label><br/>
           <label>
             <input type='text' name='90%KOH' value='1'/>

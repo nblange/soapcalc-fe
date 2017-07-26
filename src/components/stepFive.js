@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import '../index.css';
 
 class StepFive extends Component{
   constructor(props) {
   		super(props)
   		this.state = {
-  			ingredients: false
-
+  			ingredients: false,
+        counter: 0
       }
   }
-
 
   componentDidMount() {
       var self = this;
@@ -21,47 +21,51 @@ class StepFive extends Component{
             self.setState({ingredients: ingredients})
       })
     }
+
+    handleChange(e){
+      this.setState({counter: e.target.value})
+    }
+
+
     listAll(){
-      var rows = [];
-      for(var i = 0; i<this.state.ingredients.length; i++){
-        rows.push(this.state.ingredients[i].name)
-        console.log(this.state.ingredients[i].name,'lookatme')
-        console.log(rows)
-      }
-      // SET ONCLICK METHOD TO TAKE THE VALUES ID SET THAT TO A VARIABLE AND THAT WILL TAKE THE PLACE OF i IN {this.state.ingredients[i].hardness}
       return (
         <div>
-        <select>
-          <option>{rows}</option>
-        </select>
+          <div className="vertical-menu">
+          {this.state.ingredients.map(function(ingredients, i){
+            console.log(i)
+            return <div>
+              <span><a key={i} href="#" onClick={() => this.handleChange(this, i)}>{ingredients.name}</a> <a href='#'>+</a></span>
+            </div>
+          })}
+        </div>
       </div>)
     }
 
 render() {
-  console.log(this.state.ingredients, 'in render')
+  console.log(this.state, 'in render')
   if(this.state.ingredients === false){
     return(<div><span>loading</span></div>)
   } else {
       return(
         <div className='stepFiveBox'>
-          <h1> {this.listAll()}</h1>
+          {this.listAll()}
           <ul>
-            <li>Hardness={this.state.ingredients[0].hardness}</li>
-            <li>Cleansing={this.state.ingredients[0].cleansing}</li>
-            <li>Condidtion={this.state.ingredients[0].condition1}</li>
-            <li>Bubbly={this.state.ingredients[0].bubbly}</li>
-            <li>Creamy={this.state.ingredients[0].creamy}</li>
-            <li>Iodine={this.state.ingredients[0].iodine}</li>
-            <li>INS={this.state.ingredients[0].ins}</li>
-            <li>Lauric={this.state.ingredients[0].lauric}</li>
-            <li>Myristic={this.state.ingredients[0].myristic}</li>
-            <li>Palmitic={this.state.ingredients[0].palmitic}</li>
-            <li>Stearic={this.state.ingredients[0].stearic}</li>
-            <li>Ricinoleic={this.state.ingredients[0].rincinoleic}</li>
-            <li>Oleic={this.state.ingredients[0].oleic}</li>
-            <li>Linoleic={this.state.ingredients[0].linoleic}</li>
-            <li>Linolenic={this.state.ingredients[0].linolenic}</li>
-            <li>NaOH SAP={this.state.ingredients[0].sap}</li>
+            <li>Hardness={this.state.ingredients[this.state.counter].hardness}</li>
+            <li>Cleansing={this.state.ingredients[this.state.counter].cleansing}</li>
+            <li>Condidtion={this.state.ingredients[this.state.counter].condition1}</li>
+            <li>Bubbly={this.state.ingredients[this.state.counter].bubbly}</li>
+            <li>Creamy={this.state.ingredients[this.state.counter].creamy}</li>
+            <li>Iodine={this.state.ingredients[this.state.counter].iodine}</li>
+            <li>INS={this.state.ingredients[this.state.counter].ins}</li>
+            <li>Lauric={this.state.ingredients[this.state.counter].lauric}</li>
+            <li>Myristic={this.state.ingredients[this.state.counter].myristic}</li>
+            <li>Palmitic={this.state.ingredients[this.state.counter].palmitic}</li>
+            <li>Stearic={this.state.ingredients[this.state.counter].stearic}</li>
+            <li>Ricinoleic={this.state.ingredients[this.state.counter].rincinoleic}</li>
+            <li>Oleic={this.state.ingredients[this.state.counter].oleic}</li>
+            <li>Linoleic={this.state.ingredients[this.state.counter].linoleic}</li>
+            <li>Linolenic={this.state.ingredients[this.state.counter].linolenic}</li>
+            <li>NaOH SAP={this.state.ingredients[this.state.counter].sap}</li>
           </ul>
         </div>
       )
