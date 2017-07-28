@@ -3,11 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
 .vertical-menu {
     width: 200px; /* Set a width if you like */
 }
 
 .vertical-menu a {
+
     background-color: #eee; /* Grey background color */
     color: black; /* Black text color */
     display: block; /* Make the links appear below each other */
@@ -22,4 +24,194 @@ body {
 .vertical-menu a.active {
     background-color: #4CAF50; /* Add a green color to the "active/current" link */
     color: white;
+}
+
+.firstFourStepsBox{
+    background-color: #54F7BC;
+    border: solid 2px;
+    padding-bottom: 10px;
+}
+
+
+.stepFiveAndSixBox{
+    background-color: #5485F7;
+    border: solid 2px;
+}
+
+.stepOne {
+    position: relative;
+    top: -20px;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.stepOne .stepOneText {
+    visibility: hidden;
+    width: 270px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: -10px;
+    left: 105%;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stepOne:hover .stepOneText {
+    visibility: visible;
+}
+
+.stepTwo {
+    position: relative;
+    margin-left: 45px;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.stepTwo .stepTwoText {
+    visibility: hidden;
+    width: 270px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: -10px;
+    left: 105%;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stepTwo:hover .stepTwoText {
+    visibility: visible;
+}
+
+.stepThree {
+    position: relative;
+    margin-left: 45px;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.stepThree .stepThreeText {
+    visibility: hidden;
+    width: 270px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: -10px;
+    left: 105%;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stepThree:hover .stepThreeText {
+    visibility: visible;
+}
+
+.stepFour {
+    position: relative;
+    margin-left: 45px;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.stepFour .stepFourText {
+    visibility: hidden;
+    width: 270px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: -10px;
+    left: -105%;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stepFour:hover .stepFourText {
+    visibility: visible;
+}
+
+
+.stepFiveValues {
+  position: relative;
+  margin-left: 200px;
+  margin-top: -365px;
+  margin-bottom: 300px;
+}
+
+.indentStyleHardness {
+  padding-left: 60px;
+}
+
+.indentStyleCleansing{
+  padding-left: 57px;
+}
+.indentStyleCondition{
+  padding-left: 50px;
+}
+.indentStyleBubbly{
+  padding-left: 80px;
+}
+.indentStyleCreamy{
+  padding-left: 71px;
+}
+.indentStyleIodine{
+  padding-left: 84px;
+}
+.indentStyleIns{
+  padding-left: 101px;
+}
+.indentStyleLauric{
+  padding-left: 84px;
+}
+.indentStyleMyristic{
+  padding-left: 74px;
+}
+.indentStylePalmitic{
+  padding-left: 72px;
+}
+.indentStyleStearic{
+  padding-left: 78px;
+}
+.indentStyleRincinoleic{
+  padding-left: 60px;
+}
+.indentStyleOleic{
+  padding-left: 91px;
+}
+.indentStyleLinoleic{
+  padding-left: 73px;
+}
+.indentStyleLinolenic{
+  padding-left: 66px;
+}
+
+.indentStyleSap{
+  padding-left: 48px;
+}
+
+.stepSixBox {
+  position: relative;
+  margin-left: 500px;
+  margin-top: -645px;
+  margin-bottom: 300px;
 }
