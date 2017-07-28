@@ -24,7 +24,7 @@ class StepFive extends Component{
 
     handleChange = (e) => {
        e.preventDefault();
-       this.setState({counter: e.target.value})
+       this.setState({counter: e.target.value});
     }
 
 
@@ -33,7 +33,7 @@ class StepFive extends Component{
         <div>
           <div className="vertical-menu">
           {this.state.ingredients.map(function(ingredients, i){
-            console.log(i)
+
             return <div>
               <a key={i} href="#" value={i} onClick={() => this.handleChange(i)}>{ingredients.name}</a>
             </div>
