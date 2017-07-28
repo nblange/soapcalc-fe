@@ -23,19 +23,18 @@ class StepFive extends Component{
     }
 
     handleChange = (e) => {
-       e.preventDefault();
-       this.setState({counter: e.target.value});
+       this.setState({counter: e});
     }
 
 
     listAll(){
+      var self = this;
       return (
         <div>
           <div className="vertical-menu">
-          {this.state.ingredients.map(function(ingredients, i){
-
+          {self.state.ingredients.map(function(ingredients, i){
             return <div>
-              <a key={i} href="#" value={i} onClick={() => this.handleChange(i)}>{ingredients.name}</a>
+              <a key={i} href="#" onClick={() => self.handleChange(i)}>{ingredients.name}</a>
             </div>
           })}
         </div>
