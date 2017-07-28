@@ -29,7 +29,63 @@ body {
     border: solid 2px;
 }
 
+
 .stepFiveBox{
     background-color: #5485F7;
     border: solid 2px;
+}
+
+.stepOne {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.stepOne .stepOneText {
+    visibility: hidden;
+    width: 270px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: -5px;
+    left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stepOne:hover .stepOneText {
+    visibility: visible;
+}
+
+.stepTwo {
+    position: relative;
+    padding-left: 15px;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.stepTwo .stepTwoText {
+    visibility: hidden;
+    width: 270px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: -5px;
+    left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stepTwo:hover .stepTwoText {
+    visibility: visible;
 }

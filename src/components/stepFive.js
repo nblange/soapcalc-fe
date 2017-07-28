@@ -22,8 +22,9 @@ class StepFive extends Component{
       })
     }
 
-    handleChange(e){
-      this.setState({counter: e.target.value})
+    handleChange = (e) => {
+       e.preventDefault();
+       this.setState({counter: e.target.value})
     }
 
 
@@ -34,7 +35,7 @@ class StepFive extends Component{
           {this.state.ingredients.map(function(ingredients, i){
             console.log(i)
             return <div>
-              <span><a key={i} href="#" onClick={() => this.handleChange(this, i)}>{ingredients.name}</a> <a href='#'>+</a></span>
+              <a key={i} href="#" value={i} onClick={() => this.handleChange(i)}>{ingredients.name}</a>
             </div>
           })}
         </div>
@@ -70,7 +71,7 @@ render() {
         </div>
       )
     }
-  console.log(this.listAll(),)}
+  }
 }
 
 export default StepFive
