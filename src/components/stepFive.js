@@ -3,10 +3,12 @@ import $ from 'jquery';
 import '../index.css';
 
 class StepFive extends Component{
+
   constructor(props) {
   		super(props)
   		this.state = {
-  			ingredients: false
+  			ingredients: false,
+        id: 0
 
       }
   }
@@ -22,16 +24,18 @@ class StepFive extends Component{
       })
     }
 
-    handleChange(event){
-      this.setState({hardness: event.target.value})
+    handleClick(e) {
+      this.setState({ id: e.target.id },() => {
+        console.log(this.state.clickedSubmit)
+      })
     }
-    
+
     listAll(){
       return (
         <div>
           <div className="vertical-menu">
           {this.state.ingredients.map(function(ingredients, i){
-            return <a key={i} href="#">{ingredients.name}</a>
+            return <a key={i} href="#" onClick={this.handleClick.bind(this)}>{ingredients.name}</a>
           })}
         </div>
       </div>)
