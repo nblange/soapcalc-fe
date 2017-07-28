@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import StepSix from './stepSix';
 import $ from 'jquery';
 import '../index.css';
 
@@ -9,6 +8,16 @@ class StepFive extends Component{
   		super(props)
   		this.state = {
   			ingredients: false,
+        oilNameGrabbedOne: "",
+        oilNameGrabbedTwo: "",
+        oilNameGrabbedThree: "",
+        oilNameGrabbedFour: "",
+        oilNameGrabbedFive: "",
+        oilNameGrabbedSix: "",
+        oilNameGrabbedSeven: "",
+        oilNameGrabbedEight: "",
+        oilNameGrabbedNine: "",
+        oilNameGrabbedTen: "",
         counter: 0
       }
   }
@@ -27,6 +36,29 @@ class StepFive extends Component{
     handleChange = (e) => {
        this.setState({counter: e});
     }
+    addOilOne = (e) => {
+      if(this.state.oilNameGrabbedOne === ""){
+      this.setState({oilNameGrabbedOne: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedTwo === ""){
+      this.setState({oilNameGrabbedTwo: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedThree === ""){
+      this.setState({oilNameGrabbedThree: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedFour === ""){
+      this.setState({oilNameGrabbedFour: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedFive === ""){
+      this.setState({oilNameGrabbedFive: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedSix === ""){
+      this.setState({oilNameGrabbedSix: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedSeven === ""){
+      this.setState({oilNameGrabbedSeven: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedEight === ""){
+      this.setState({oilNameGrabbedEight: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedNine === ""){
+      this.setState({oilNameGrabbedNine: this.state.ingredients[e].name})
+    } else if(this.state.oilNameGrabbedTen === ""){
+      this.setState({oilNameGrabbedTen: this.state.ingredients[e].name})
+    }
+    }
 
 
     listAll(){
@@ -37,6 +69,7 @@ class StepFive extends Component{
           {self.state.ingredients.map(function(ingredients, i){
             return <div>
               <a key={i} href="#" onClick={() => self.handleChange(i)}>{ingredients.name}</a>
+              <a key={self.state.ingredients.id} href='#' onClick={() => self.addOilOne(i)}>+</a>
             </div>
           })}
         </div>
@@ -71,7 +104,50 @@ render() {
               <li>NaOH SAP=<span className="indentStyleSap">{this.state.ingredients[this.state.counter].sap}</span></li>
             </ul>
           </div>
-          <StepSix/>
+          <div className='stepSixBox'>
+            <h1 className="stepSixHeading"> Recipe Oil List </h1>
+              <form className="stepSixForm">
+                <label> 1
+                  <input className="inputOne" type="text" value={this.state.oilNameGrabbedOne}/>
+                </label>
+                <br/>
+                <label> 2
+                  <input className="inputTwo" type="text" value={this.state.oilNameGrabbedTwo}/>
+                </label>
+                <br/>
+                <label> 3
+                  <input className="inputThree" type="text" value={this.state.oilNameGrabbedThree}/>
+                </label>
+                <br/>
+                <label> 4
+                  <input className="inputFour" type="text" value={this.state.oilNameGrabbedFour}/>
+                </label>
+                <br/>
+                <label> 5
+                  <input className="inputFive" type="text" value={this.state.oilNameGrabbedFive}/>
+                </label>
+                <br/>
+                <label> 6
+                  <input className="inputSix" type="text" value={this.state.oilNameGrabbedSix}/>
+                </label>
+                <br/>
+                <label> 7
+                  <input className="inputSeven" type="text" value={this.state.oilNameGrabbedSeven}/>
+                </label>
+                <br/>
+                <label> 8
+                  <input className="inputEight" type="text" value={this.state.oilNameGrabbedEight}/>
+                </label>
+                <br/>
+                <label> 9
+                  <input className="inputNine" type="text" value={this.state.oilNameGrabbedNine}/>
+                </label>
+                <br/>
+                <label> 10
+                  <input className="inputTen" type="text" value={this.state.oilNameGrabbedTen}/>
+                </label>
+              </form>
+          </div>
         </div>
       )
     }
