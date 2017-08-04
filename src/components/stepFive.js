@@ -52,23 +52,7 @@ class StepFive extends Component{
     handleChange = (e) => {
        this.setState({counter: e});
     }
-    addOil = (e, prevState) => {
-      const hardnessVal = ""
-      const cleansingVal = ""
-      const conditionVal = ""
-      const bubblyVal = ""
-      const creamyVal = ""
-      const iodineVal = ""
-      const insVal = ""
-      const lauricVal = ""
-      const myristicVal = ""
-      const palmiticVal = ""
-      const stearicVal = ""
-      const ricinoleicVal = ""
-      const oleicVal = ""
-      const linoleicVal = ""
-      const linolenicVal = ""
-      const sapVal = ""
+    addOil = (e) => {
       if(this.state.oilGrabbedOne === ""){
         const hardnessVal = this.state.ingredients[e].hardness
         const cleansingVal = this.state.ingredients[e].cleansing
@@ -106,22 +90,22 @@ class StepFive extends Component{
         sapAll: sapVal
         })
       } else if(this.state.oilGrabbedTwo === ""){
-        const hardnessVal = (this.state.hardnessAll + this.state.ingredients[e].hardness)/2
-        const cleansingVal = (this.state.cleansingAll + this.state.ingredients[e].cleansing)/2
-        const conditionVal = (this.state.conditionAll + this.state.ingredients[e].condition1)/2
-        const bubblyVal = (this.state.bubblyAll + this.state.ingredients[e].bubbly)/2
-        const creamyVal = (this.state.creamyAll + this.state.ingredients[e].creamy)/2
-        const iodineVal = (this.state.iodineAll + this.state.ingredients[e].iodine)/2
-        const insVal = (this.state.insAll + this.state.ingredients[e].ins)/2
-        const lauricVal = (this.state.lauricAll + this.state.ingredients[e].lauric)/2
-        const myristicVal = (this.state.myristicAll + this.state.ingredients[e].myristic)/2
-        const palmiticVal = (this.state.palmiticAll + this.state.ingredients[e].palmitic)/2
-        const stearicVal = (this.state.stearicAll + this.state.ingredients[e].stearic)/2
-        const ricinoleicVal = (this.state.ricinoleicAll + this.state.ingredients[e].ricinoleic)/2
-        const oleicVal = (this.state.oleicAll + this.state.ingredients[e].oleic)/2
-        const linoleicVal = (this.state.linoleicAll + this.state.ingredients[e].linoleic)/2
-        const linolenicVal = (this.state.linolenicAll + this.state.ingredients[e].linolenic)/2
-        const sapVal = (this.state.sapAll + this.state.ingredients[e].sap)/2
+        const hardnessVal = (this.state.oilGrabbedOne.hardness + this.state.ingredients[e].hardness)/2
+        const cleansingVal = (this.state.oilGrabbedOne.cleansing + this.state.ingredients[e].cleansing)/2
+        const conditionVal = (this.state.oilGrabbedOne.condition1 + this.state.ingredients[e].condition1)/2
+        const bubblyVal = (this.state.oilGrabbedOne.bubbly + this.state.ingredients[e].bubbly)/2
+        const creamyVal = (this.state.oilGrabbedOne.creamy + this.state.ingredients[e].creamy)/2
+        const iodineVal = (this.state.oilGrabbedOne.iodine + this.state.ingredients[e].iodine)/2
+        const insVal = (this.state.oilGrabbedOne.ins + this.state.ingredients[e].ins)/2
+        const lauricVal = (this.state.oilGrabbedOne.lauric + this.state.ingredients[e].lauric)/2
+        const myristicVal = (this.state.oilGrabbedOne.myristic + this.state.ingredients[e].myristic)/2
+        const palmiticVal = (this.state.oilGrabbedOne.palmitic + this.state.ingredients[e].palmitic)/2
+        const stearicVal = (this.state.oilGrabbedOne.stearic + this.state.ingredients[e].stearic)/2
+        const ricinoleicVal = (this.state.oilGrabbedOne.ricinoleic + this.state.ingredients[e].ricinoleic)/2
+        const oleicVal = (this.state.oilGrabbedOne.oleic + this.state.ingredients[e].oleic)/2
+        const linoleicVal = (this.state.oilGrabbedOne.linoleic + this.state.ingredients[e].linoleic)/2
+        const linolenicVal = (this.state.oilGrabbedOne.linolenic + this.state.ingredients[e].linolenic)/2
+        const sapVal = (this.state.oilGrabbedOne.sap + this.state.ingredients[e].sap)/2
         this.setState({
         oilGrabbedTwo: this.state.ingredients[e],
         hardnessAll: hardnessVal,
@@ -142,9 +126,77 @@ class StepFive extends Component{
         sapAll: sapVal
       })
       } else if(this.state.oilGrabbedThree === ""){
-      this.setState({oilGrabbedThree: this.state.ingredients[e]})
+        const hardnessVal = (this.state.oilGrabbedTwo.hardness + this.state.oilGrabbedOne.hardness + this.state.ingredients[e].hardness)/3
+        const cleansingVal = (this.state.oilGrabbedTwo.cleansing + this.state.oilGrabbedOne.cleansing + this.state.ingredients[e].cleansing)/3
+        const conditionVal = (this.state.oilGrabbedTwo.condition1 + this.state.oilGrabbedOne.condition1 + this.state.ingredients[e].condition1)/3
+        const bubblyVal = (this.state.oilGrabbedTwo.bubbly + this.state.oilGrabbedOne.bubbly + this.state.ingredients[e].bubbly)/3
+        const creamyVal = (this.state.oilGrabbedTwo.creamy + this.state.oilGrabbedOne.creamy + this.state.ingredients[e].creamy)/3
+        const iodineVal = (this.state.oilGrabbedTwo.iodine + this.state.oilGrabbedOne.iodine + this.state.ingredients[e].iodine)/3
+        const insVal = (this.state.oilGrabbedTwo.ins + this.state.oilGrabbedOne.ins + this.state.ingredients[e].ins)/3
+        const lauricVal = (this.state.oilGrabbedTwo.lauric + this.state.oilGrabbedOne.lauric + this.state.ingredients[e].lauric)/3
+        const myristicVal = (this.state.oilGrabbedTwo.myristic + this.state.oilGrabbedOne.myristic + this.state.ingredients[e].myristic)/3
+        const palmiticVal = (this.state.oilGrabbedTwo.palmitic + this.state.oilGrabbedOne.palmitic + this.state.ingredients[e].palmitic)/3
+        const stearicVal = (this.state.oilGrabbedTwo.stearic + this.state.oilGrabbedOne.stearic + this.state.ingredients[e].stearic)/3
+        const ricinoleicVal = (this.state.oilGrabbedTwo.ricinoleic + this.state.oilGrabbedOne.ricinoleic + this.state.ingredients[e].ricinoleic)/3
+        const oleicVal = (this.state.oilGrabbedTwo.oleic + this.state.oilGrabbedOne.oleic + this.state.ingredients[e].oleic)/3
+        const linoleicVal = (this.state.oilGrabbedTwo.linoleic + this.state.oilGrabbedOne.linoleic + this.state.ingredients[e].linoleic)/3
+        const linolenicVal = (this.state.oilGrabbedTwo.linolenic + this.state.oilGrabbedOne.linolenic + this.state.ingredients[e].linolenic)/3
+        const sapVal = (this.state.oilGrabbedTwo.sap + this.state.oilGrabbedOne.sap + this.state.ingredients[e].sap)/3
+      this.setState({
+        oilGrabbedThree: this.state.ingredients[e],
+        hardnessAll: hardnessVal,
+        cleansingAll: cleansingVal,
+        conditionAll:  conditionVal,
+        bubblyAll: bubblyVal,
+        creamyAll: creamyVal,
+        iodineAll: iodineVal,
+        insAll: insVal,
+        lauricAll: lauricVal,
+        myristicAll: myristicVal,
+        palmiticAll: palmiticVal,
+        stearicAll: stearicVal,
+        ricinoleicAll: ricinoleicVal,
+        oleicAll: oleicVal,
+        linoleicAll: linoleicVal,
+        linolenicAll: linolenicVal,
+        sapAll: sapVal
+      })
       } else if(this.state.oilGrabbedFour === ""){
-      this.setState({oilGrabbedFour: this.state.ingredients[e]})
+        const hardnessVal = (this.state.oilGrabbedThree.hardness + this.state.oilGrabbedTwo.hardness + this.state.oilGrabbedOne.hardness + this.state.ingredients[e].hardness)/3
+        const cleansingVal = (this.state.oilGrabbedThree.cleansing + this.state.oilGrabbedTwo.cleansing + this.state.oilGrabbedOne.cleansing + this.state.ingredients[e].cleansing)/3
+        const conditionVal = (this.state.oilGrabbedThree.condition1 + this.state.oilGrabbedTwo.condition1 + this.state.oilGrabbedOne.condition1 + this.state.ingredients[e].condition1)/3
+        const bubblyVal = (this.state.oilGrabbedThree.bubbly + this.state.oilGrabbedTwo.bubbly + this.state.oilGrabbedOne.bubbly + this.state.ingredients[e].bubbly)/3
+        const creamyVal = (this.state.oilGrabbedThree.creamy + this.state.oilGrabbedTwo.creamy + this.state.oilGrabbedOne.creamy + this.state.ingredients[e].creamy)/3
+        const iodineVal = (this.state.oilGrabbedThree.iodine + this.state.oilGrabbedTwo.iodine + this.state.oilGrabbedOne.iodine + this.state.ingredients[e].iodine)/3
+        const insVal = (this.state.oilGrabbedThree.ins + this.state.oilGrabbedTwo.ins + this.state.oilGrabbedOne.ins + this.state.ingredients[e].ins)/3
+        const lauricVal = (this.state.oilGrabbedThree.lauric + this.state.oilGrabbedTwo.lauric + this.state.oilGrabbedOne.lauric + this.state.ingredients[e].lauric)/3
+        const myristicVal = (this.state.oilGrabbedThree.myristic + this.state.oilGrabbedTwo.myristic + this.state.oilGrabbedOne.myristic + this.state.ingredients[e].myristic)/3
+        const palmiticVal = (this.state.oilGrabbedThree.palmitic + this.state.oilGrabbedTwo.palmitic + this.state.oilGrabbedOne.palmitic + this.state.ingredients[e].palmitic)/3
+        const stearicVal = (this.state.oilGrabbedThree.stearic + this.state.oilGrabbedTwo.stearic + this.state.oilGrabbedOne.stearic + this.state.ingredients[e].stearic)/3
+        const ricinoleicVal = (this.state.oilGrabbedThree.ricinoleic + this.state.oilGrabbedTwo.ricinoleic + this.state.oilGrabbedOne.ricinoleic + this.state.ingredients[e].ricinoleic)/3
+        const oleicVal = (this.state.oilGrabbedThree.oleic + this.state.oilGrabbedTwo.oleic + this.state.oilGrabbedOne.oleic + this.state.ingredients[e].oleic)/3
+        const linoleicVal = (this.state.oilGrabbedThree.linoleic + this.state.oilGrabbedTwo.linoleic + this.state.oilGrabbedOne.linoleic + this.state.ingredients[e].linoleic)/3
+        const linolenicVal = (this.state.oilGrabbedThree.linolenic + this.state.oilGrabbedTwo.linolenic + this.state.oilGrabbedOne.linolenic + this.state.ingredients[e].linolenic)/3
+        const sapVal = (this.state.oilGrabbedThree.sap + this.state.oilGrabbedTwo.sap + this.state.oilGrabbedOne.sap + this.state.ingredients[e].sap)/3
+      this.setState({
+        oilGrabbedFour: this.state.ingredients[e],
+        hardnessAll: hardnessVal,
+        cleansingAll: cleansingVal,
+        conditionAll:  conditionVal,
+        bubblyAll: bubblyVal,
+        creamyAll: creamyVal,
+        iodineAll: iodineVal,
+        insAll: insVal,
+        lauricAll: lauricVal,
+        myristicAll: myristicVal,
+        palmiticAll: palmiticVal,
+        stearicAll: stearicVal,
+        ricinoleicAll: ricinoleicVal,
+        oleicAll: oleicVal,
+        linoleicAll: linoleicVal,
+        linolenicAll: linolenicVal,
+        sapAll: sapVal
+      })
       } else if(this.state.oilGrabbedFive === ""){
       this.setState({oilGrabbedFive: this.state.ingredients[e]})
       } else if(this.state.oilGrabbedSix === ""){
@@ -161,7 +213,7 @@ class StepFive extends Component{
     }
 
     showOilNameOne(){
-      if(this.state.oilGrabbedOne != ""){
+      if(this.state.oilGrabbedOne !== ""){
         return this.state.oilGrabbedOne.name
       } else{
         return ""
@@ -169,7 +221,7 @@ class StepFive extends Component{
     }
 
     showOilNameTwo(){
-      if(this.state.oilGrabbedTwo != ""){
+      if(this.state.oilGrabbedTwo !== ""){
         return this.state.oilGrabbedTwo.name
       } else{
         return ""
@@ -177,7 +229,7 @@ class StepFive extends Component{
     }
 
     showOilNameThree(){
-      if(this.state.oilGrabbedThree != ""){
+      if(this.state.oilGrabbedThree !== ""){
         return this.state.oilGrabbedThree.name
       } else{
         return ""
@@ -185,7 +237,7 @@ class StepFive extends Component{
     }
 
     showOilNameFour(){
-      if(this.state.oilGrabbedFour != ""){
+      if(this.state.oilGrabbedFour !== ""){
         return this.state.oilGrabbedFour.name
       } else{
         return ""
@@ -193,7 +245,7 @@ class StepFive extends Component{
     }
 
     showOilNameFive(){
-      if(this.state.oilGrabbedFive != ""){
+      if(this.state.oilGrabbedFive !== ""){
         return this.state.oilGrabbedFive.name
       } else{
         return ""
@@ -201,7 +253,7 @@ class StepFive extends Component{
     }
 
     showOilNameSix(){
-      if(this.state.oilGrabbedSix != ""){
+      if(this.state.oilGrabbedSix !== ""){
         return this.state.oilGrabbedSix.name
       } else{
         return ""
@@ -209,7 +261,7 @@ class StepFive extends Component{
     }
 
     showOilNameSeven(){
-      if(this.state.oilGrabbedSeven != ""){
+      if(this.state.oilGrabbedSeven !== ""){
         return this.state.oilGrabbedSeven.name
       } else{
         return ""
@@ -217,7 +269,7 @@ class StepFive extends Component{
     }
 
     showOilNameEight(){
-      if(this.state.oilGrabbedEight != ""){
+      if(this.state.oilGrabbedEight !== ""){
         return this.state.oilGrabbedEight.name
       } else{
         return ""
@@ -225,7 +277,7 @@ class StepFive extends Component{
     }
 
     showOilNameNine(){
-      if(this.state.oilGrabbedNine != ""){
+      if(this.state.oilGrabbedNine !== ""){
         return this.state.oilGrabbedNine.name
       } else{
         return ""
@@ -233,7 +285,7 @@ class StepFive extends Component{
     }
 
     showOilNameTen(){
-      if(this.state.oilGrabbedTen != ""){
+      if(this.state.oilGrabbedTen !== ""){
         return this.state.oilGrabbedTen.name
       } else{
         return ""
